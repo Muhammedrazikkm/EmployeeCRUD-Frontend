@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-2"></div>
+        <div class="col-8 border shadow p-5">
+            <form action="" [formGroup]="empForm" (ngSubmit)="editEmp()" >
+                <h1 class="text-center">Edit Employee Details </h1>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Enter Employee Name" formControlName="name">
+                    <div class="form-text text-danger" *ngIf="name?.touched && name?.invalid">enter valid name</div>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Enter Email" formControlName="email">
+                    <div class="form-text text-danger" *ngIf="email?.touched && email?.invalid">enter valid email</div>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Enter Department" formControlName="department">
+                    <div class="form-text text-danger" *ngIf="department?.touched && department?.invalid">enter valid department</div>
+                </div>
+                <div class="mb-3">
+                    <input type="number" class="form-control" placeholder="Enter phone number" formControlName="phone">
+                    <div class="form-text text-danger" *ngIf="phone?.touched && phone?.invalid">enter valid phone number</div>
+                </div>
+                <div class="mb-3">
+                    <input type="number" class="form-control" placeholder="Enter Salary" formControlName="salary">
+                    <div class="form-text text-danger" *ngIf="salary?.touched && salary?.invalid">enter valid salary</div>
+                </div>
+                <div class="mb-3">
+                    <input type="submit" [disabled]="empForm.invalid" class="form-control btn btn-info" >
+                </div>
+            </form>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
+

@@ -1,0 +1,33 @@
+<div class="border p-3 shadow">
+    <table class="table table-striped caption-top p-2">
+        <caption>List of Employees</caption>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Phone</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        
+            <tr *ngFor="let emp of employees">
+                <td> {{emp.name}}</td>
+                <td> {{emp.email}}</td>
+                <td>{{emp.department}}</td>
+                <td>{{emp.salary}}</td>
+                <td>{{emp.phone}}</td>
+                <td>
+                    <button (click)="redirecttoEmployeDetail(emp.id)" class="btn btn-info">View</button>
+                    <button [routerLink]="['/employee-edit',emp.id]" class="btn btn-info">Edit</button>
+                    <button (click)="removeEmployye(emp.id)" class="btn btn-info">Delete</button>
+                </td>
+            </tr>
+        
+
+
+    </table>
+    
+
+</div>
